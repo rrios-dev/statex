@@ -1,0 +1,40 @@
+{
+  "name": "statex-react",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "statex-react/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    },
+    "build": {
+      "executor": "@nx/rollup:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/statex-react",
+        "tsConfig": "statex-react/tsconfig.lib.json",
+        "project": "statex-react/package.json",
+        "entryFile": "statex-react/src/index.ts",
+        "external": ["react", "react-dom", "react/jsx-runtime"],
+        "rollupConfig": "@nx/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "statex-react/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "statex-react/jest.config.ts"
+      }
+    }
+  }
+}
