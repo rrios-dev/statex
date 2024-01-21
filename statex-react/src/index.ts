@@ -1,1 +1,1 @@
-export * from './lib/statex-react';
+export * from './lib/hooks/index';
