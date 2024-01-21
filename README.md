@@ -1,6 +1,6 @@
 # Statex
 
-![statex](https://github.com/[rrios-dev]/[statex]/blob/[branch]/statex.png?raw=true)
+![statex](https://github.com/rrios-dev/statex/blob/main/statex.png?raw=true)
 
 ## Description
 
